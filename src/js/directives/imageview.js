@@ -24,6 +24,9 @@ angular.module("Nearby").directive('imageview', function() {
                 "height": ($(element).parent().width() || $(window).width()) / rate
             }
             $(element).css(style);
+            $(element).parent().css({
+                overflow: "hidden"
+            });
         }
     };
 });

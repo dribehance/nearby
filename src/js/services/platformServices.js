@@ -69,7 +69,7 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             if (!this.isNative()) {
                 return;
             }
-            alert("invoke getLocation")
+            alert("invoke sendBonus")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
                 android.sendBonus();

@@ -45,4 +45,5 @@ var bonusController = function($scope, $location, $routeParams,bonusServices, pl
     $scope.sendBonus = function() {
         platformServices.sendBonus();
     }
+    $scope.imageview_src = "../images/bonus_bg.png";
 }

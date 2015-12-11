@@ -18,4 +18,5 @@ var bonusEnvelopeController = function($scope, $location, $routeParams, bonusSer
             token: $routeParams.token
         })
     }
+    $scope.imageview_src = "../images/bonus_bg.png";
 }

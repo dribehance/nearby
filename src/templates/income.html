@@ -2,10 +2,26 @@
 <div ui-content-for="title">推广收入</div>
 <div ui-content-for="navbarAction"></div>
 <div ui-content-for="backAction">
-	<span class="btn" ng-click="back()"><i class="fa fa-chevron-left"></i></span>
+    <span class="btn" ng-click="back()"><i class="fa fa-chevron-left"></i></span>
 </div>
 <div class="scrollable">
-	<div class="scrollable-content">
-		开发中，请稍等
-	</div>
+    <div class="scrollable-content">
+        <div class="scrollable-header income-header">
+            <div class="back-action" ng-click="back()"><i class="fa fa-chevron-left"></i></div>
+            <div class="title text-center">推广收入</div>
+            <div class="income-statistics text-center">
+                <p class="text-very-big">3600</p>
+                <span>元</span>
+            </div>
+        </div>
+        <div class="list-group-item">
+        	分享推荐码 <b class="text-primary">7758258</b> <i class="kk-icon kk-share-1 pull-right"></i>
+        </div>
+        <div class="divide divide-10"></div>
+        <div class="list-group-item">
+        	<p>规则说明：</p>
+        	<p>1、下载周边信息app并注册</p>
+        	<p>2、进入“我的”->“推广收入”->“分享推荐码”，平台根据推荐注册用户的数量和质量给予推荐人一定的收入，用户可以通过”我的”->“资金流水”查看资金的推广收入流水。</p>
+        </div>
+    </div>
 </div>

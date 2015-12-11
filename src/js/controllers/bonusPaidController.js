@@ -36,4 +36,5 @@ var bonusPaidController = function($scope, $routeParams, $location, bonusService
             token: $routeParams.token
         }).replace();
     }
+    $scope.imageview_src = "../images/bonus_bg.png";
 }

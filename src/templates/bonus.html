@@ -10,7 +10,7 @@
 			<div class="back-action" ng-click="back()"><i class="fa fa-chevron-left"></i></div>
 			<div class="nav-action" ng-click="queryBonusRecords()">红包记录</div>
 			<div class="title text-center">红包</div>
-			<img ng-src="../images/bonus_bg.png" class="block full-width" alt="">
+			<imageview src="imageview_src" data-rate="640/270"></imageview>
 		</div>
 		<div class="bonus-items">
 			<div class="bonus-item" ng-click="envelopeBonus(bonus.user_bonus_id)" ng-repeat="bonus in bonus_list">
@@ -25,8 +25,8 @@
 			</div>
 			<div class="section text-center m" ng-click="loadMore()">{{page.message}}</div>
 		</div>
-		<!-- <div class="scrollable-footer bg-primary text-white text-center">
+		<div class="scrollable-footer bg-primary text-white text-center">
 			<div class="section bg-transparent" ng-click="sendBonus()">发红包</div>
-		</div> -->
+		</div>
 	</div>
 </div>

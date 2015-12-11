@@ -38,4 +38,5 @@ var bonusReceivedController = function($scope, $location, $routeParams, bonusSer
             token: $scope.token
         }).replace()
     }
+    $scope.imageview_src = "../images/bonus_bg.png";
 }

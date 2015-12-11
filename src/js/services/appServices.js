@@ -23,7 +23,7 @@
          } else {
              $rootScope.navbar.bottom = false;
          }
-         var _navbars_t = ["/bonus", "/bonus/envelope", "/bonus/received", "/bonus/paid"];
+         var _navbars_t = ["/bonus", "/bonus/envelope", "/bonus/received", "/bonus/paid","/income"];
          if (_navbars_t.contains($location.path())) {
              $rootScope.navbar.top = false;
          } else {
