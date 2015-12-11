@@ -73,11 +73,6 @@ angular.module("Nearby", [
             reloadOnSearch: false,
             controller: authenicationCompanyController
         })
-        .when("/authenication/car_owner", {
-            templateUrl: "authenication_car_owner.html",
-            reloadOnSearch: false,
-            controller: authenicationCarOwnerController
-        })
         .otherwise({
             redirectTo: "/index"
         });

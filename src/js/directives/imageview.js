@@ -17,6 +17,7 @@ angular.module("Nearby").directive('imageview', function() {
                 width: $(element).parent().width() || $(window).width(),
                 overflow: "hidden",
                 "text-align": "center",
+                "background-color":"#F2F0F1",
                 "background-image": "url(" + bg_image + ")",
                 "background-size": "100%",
                 "background-position": "center center",

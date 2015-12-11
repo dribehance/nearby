@@ -25,7 +25,7 @@ angular.module("Nearby").directive('showOnLoaded', function() {
                     })
                 }
                 $(element).parent().css({
-                    "background": "none"
+                    "background-image": "none"
                 })
                 $(element).css({
                     "visibility": "visible"
