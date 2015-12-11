@@ -94,6 +94,36 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
                     bridge.callHandler("getLocation", {}, function(data) {});
                 });
             }
+        },
+        share: function() {
+            if (!this.isNative()) {
+                return;
+            }
+            alert("invoke share")
+            // alert("TOKEN_INVALID")
+            if (this.isAndroid()) {
+                android.share();
+            }
+            if (this.isIos()) {
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("share", {}, function(data) {});
+                });
+            }
+        },
+        dial: function() {
+            if (!this.isNative()) {
+                return;
+            }
+            alert("invoke dial")
+            // alert("TOKEN_INVALID")
+            if (this.isAndroid()) {
+                android.dial();
+            }
+            if (this.isIos()) {
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("dial", {}, function(data) {});
+                });
+            }
         }
     }
 });
