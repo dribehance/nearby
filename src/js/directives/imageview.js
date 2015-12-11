@@ -14,14 +14,14 @@ angular.module("Nearby").directive('imageview', function() {
             }
             var style = {
                 display: "block",
-                width: $(element).width() || $(window).width(),
+                width: $(element).parent().width() || $(window).width(),
                 overflow: "hidden",
                 "text-align": "center",
                 "background-image": "url(" + bg_image + ")",
                 "background-size": "100%",
                 "background-position": "center center",
-                "line-height": ($(element).width() || $(window).width()) / rate + "px",
-                "height": ($(element).width() || $(window).width()) / rate
+                "line-height": ($(element).parent().width() || $(window).width()) / rate + "px",
+                "height": ($(element).parent().width() || $(window).width()) / rate
             }
             $(element).css(style);
         }

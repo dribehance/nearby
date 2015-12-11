@@ -136,3 +136,45 @@
         height: 100%;
     }
 }
+.navtab {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:12px;
+    width: 150px;
+    margin: auto auto;
+    border: 1px solid @brand-primary;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: white;
+    span {
+        float: left;
+        width: 50%;
+        padding:3px 8px;
+        text-align: center;
+    }
+    span.active {
+        background-color: @brand-primary;
+        color: white;
+    }
+}
+.partime-feature {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    margin-right: 8px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background-color: @gray-light;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+.company-feature {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    margin-right: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
