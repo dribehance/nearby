@@ -1,4 +1,6 @@
 // by dribehance <dribehance.kksdapp.com>
-var infoController = function($scope,errorServices,toastServices,localStorageService,config){
-	
+var infoController = function($scope, platformServices, errorServices, toastServices, localStorageService, config) {
+    $scope.getLocation = function() {
+    	platformServices.getLocation();
+    }
 }

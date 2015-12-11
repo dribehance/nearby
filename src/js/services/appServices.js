@@ -18,10 +18,16 @@
      var navBarHandler = function(e, currentRoute, prevRoute) {
          // handle navbar
          var _navbars_b = ["/index", "/licai", "/me", "/", "/signin"];
-         if (!_navbars_b.contains($location.path())) {
-             $rootScope.navbar.bottom = false;
-         } else {
+         if (_navbars_b.contains($location.path())) {
              $rootScope.navbar.bottom = true;
+         } else {
+             $rootScope.navbar.bottom = false;
+         }
+         var _navbars_t = ["/bonus", "/bonus/envelope", "/bonus/received", "/bonus/paid"];
+         if (_navbars_t.contains($location.path())) {
+             $rootScope.navbar.top = false;
+         } else {
+             $rootScope.navbar.top = true;
          }
      }
      var onBackKeyDown = function() {

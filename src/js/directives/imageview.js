@@ -6,7 +6,7 @@ angular.module("Nearby").directive('imageview', function() {
         },
         template: "<img ng-src='{{src}}' show-on-loaded>",
         link: function(scope, element, attrs) {
-            var bg_image = "../images/default.png";
+            var bg_image = "../images/default.jpg";
             var rate = parseFloat(scope.$eval($(element).attr('data-rate')));
             if (!rate) {
                 console.log("unexpect rate")

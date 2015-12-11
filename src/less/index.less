@@ -1,0 +1,111 @@
+.bonus-header {
+    color: white;
+    .title {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding: 8px 16px;
+        font-size: 18px;
+    }
+    .back-action {
+        position: absolute;
+        padding: 8px 16px;
+        top: 4px;
+        left: 0;
+        z-index: 100;
+    }
+    .nav-action {
+        position: absolute;
+        padding: 8px 16px;
+        top: 4px;
+        right: 0;
+        z-index: 100;
+    }
+    .bonus-statistics {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 47px;
+    }
+}
+
+.bonus-items {
+    padding: 16px;
+    .bonus-item {
+        margin-bottom: 16px;
+        color: white;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        overflow: hidden;
+        background-color: @brand-primary;
+        border-bottom: 1px solid #AFAFAF;
+        .bonus-content {
+            height: 52px;
+            margin: 5px 8px;
+        }
+        .bonus-meta {
+            line-height: 26px;
+        }
+        .bonus-footer {
+            color: gray;
+            padding: 5px 8px;
+            background-color: @gray-lighter;
+        }
+        img {
+            width: 40px;
+            margin-right: 8px;
+        }
+    }
+}
+.section.large {
+    padding: 16px 10px;
+}
+.info-banner {
+    position: relative;
+    overflow: hidden;
+    span.tip {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: white;
+        display: inline-block;
+        padding: 2px 10px;
+        background-color: fade(black, 50%);
+    }
+}
+.info-action {
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    text-align: center;
+    background-color: @brand-primary;
+    span {
+        display: inline-block;
+        max-width: 200px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        i {
+            font-style: normal;
+        }
+    }
+}
+.divide {
+    display: block;
+    &.divide-10 {
+        height: 10px;
+    }
+}
+.close-1 {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    color: @brand-primary;
+    border: 1px solid @brand-primary;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+}

@@ -24,10 +24,11 @@ angular.module("Nearby").factory("tokenInterceptor", function($location, $q, loc
                 return response;
             }
             // server response
-            if (response.data.respcode == config.request.TOKEN_INVALID) {
+            if (response.data.code == config.request.TOKEN_INVALID) {
                 console.log("TOKEN_INVALID")
                 localStorageService.remove("token");
-                $location.path("/signIn").replace();
+                errorServices.autoHide("405")
+                // $location.path("/index").replace();
                 return defer.promise;
             } else {
                 return response;

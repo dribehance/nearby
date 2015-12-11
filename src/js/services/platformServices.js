@@ -64,6 +64,36 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
                     bridge.callHandler("toLogin", {}, function(data) {});
                 });
             }
+        },
+        sendBonus: function() {
+            if (!this.isNative()) {
+                return;
+            }
+            alert("invoke getLocation")
+            // alert("TOKEN_INVALID")
+            if (this.isAndroid()) {
+                android.sendBonus();
+            }
+            if (this.isIos()) {
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("sendBonus", {}, function(data) {});
+                });
+            }
+        },
+        getLocation: function() {
+            if (!this.isNative()) {
+                return;
+            }
+            alert("invoke getLocation")
+            // alert("TOKEN_INVALID")
+            if (this.isAndroid()) {
+                android.getLocation();
+            }
+            if (this.isIos()) {
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("getLocation", {}, function(data) {});
+                });
+            }
         }
     }
 });

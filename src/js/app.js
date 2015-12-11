@@ -38,6 +38,11 @@ angular.module("Nearby", [
             reloadOnSearch: false,
             controller: bonusController
         })
+        .when("/bonus/envelope", {
+            templateUrl: "bonus_envelope.html",
+            reloadOnSearch: false,
+            controller: bonusEnvelopeController
+        })
         .when("/bonus/paid", {
             templateUrl: "bonus_paid.html",
             reloadOnSearch: false,

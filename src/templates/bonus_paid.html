@@ -1,11 +1,29 @@
 <!-- by dribehance <dribehance.kksdapp.com> -->
-<div ui-content-for="title">发出的红包</div>
+<div ui-content-for="title">红包</div>
 <div ui-content-for="navbarAction"></div>
 <div ui-content-for="backAction">
-	<span class="btn" ng-click="back()"><i class="fa fa-chevron-left"></i></span>
+    <span class="btn" ng-click="back()"><i class="fa fa-chevron-left"></i></span>
 </div>
 <div class="scrollable">
-	<div class="scrollable-content">
-		开发中，请稍等
-	</div>
+    <div class="scrollable-content">
+        <div class="scrollable-header bonus-header">
+            <div class="back-action" ng-click="back()"><i class="fa fa-chevron-left"></i></div>
+            <div class="nav-action" ng-click="queryReceivedBonus()">收到的</div>
+            <div class="title text-center">红包</div>
+            <img ng-src="../images/bonus_bg.png" class="block full-width" alt="">
+        </div>
+        <div class="bonus-items">
+            <div class="bonus-item" ng-repeat="bonus in bonus_paid">
+                <div class="bonus-content">
+                    <img src="../images/bonus.png" class="pull-left" alt="">
+                    <div class="bonus-meta">{{bonus.note}}<span class="pull-right">{{bonus.money|currency:"￥"}}</div>
+                    <div class="bonus-meta">已发出<span class="pull-right">{{bonus.post_time}}</span></div>
+                </div>
+                <div class="bonus-footer">
+                    {{bonus.name}}
+                </div>
+            </div>
+        </div>
+        <div class="section text-center m" ng-click="loadMore()">{{page.message}}</div>
+    </div>
 </div>

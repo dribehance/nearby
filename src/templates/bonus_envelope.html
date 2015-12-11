@@ -1,0 +1,33 @@
+<!-- by dribehance <dribehance.kksdapp.com> -->
+<div ui-content-for="title">领取红包</div>
+<div ui-content-for="navbarAction"></div>
+<div ui-content-for="backAction">
+    <span class="btn" ng-click="back()"><i class="fa fa-chevron-left"></i></span>
+</div>
+<div class="scrollable">
+    <div class="scrollable-content">
+        <div class="scrollable-header bonus-header">
+            <div class="back-action" ng-click="back()"><i class="fa fa-chevron-left"></i></div>
+            <div class="nav-action" ng-click="queryBonusRecords()">红包记录</div>
+            <div class="title text-center">领取红包</div>
+            <img ng-src="../images/bonus_bg.png" class="block full-width" alt="">
+        </div>
+        <div class="text-center section bg-transparent">
+            <span class="text-gray">红包由</span>
+            <b>{{bonus.name}}</b>
+            <span class="text-gray">赞助</span>
+        </div>
+        <div class="text-center section bg-transparent">
+            <span class="text-very-large">{{bonus.money|currency:"￥"}}</span>元
+        </div>
+        <div class="text-center section bg-transparent">
+            <span class="text-gray">已存入余额，可用于消费</span>
+        </div>
+        <div class="section large bg-transparent">
+            <p>公司名称：{{bonus.name}}</p>
+            <p>公司地址：{{bonus.address}}</p>
+            <p>公司电话：{{bonus.telephone}}</p>
+            <p>公司官网：<a ng-href="{{bonus.website}}">{{bonus.website}}</a></p>
+        </div>
+    </div>
+</div>

@@ -6,6 +6,27 @@
 </div>
 <div class="scrollable">
 	<div class="scrollable-content">
-		红包
+		<div class="scrollable-header bonus-header">
+			<div class="back-action" ng-click="back()"><i class="fa fa-chevron-left"></i></div>
+			<div class="nav-action" ng-click="queryBonusRecords()">红包记录</div>
+			<div class="title text-center">红包</div>
+			<img ng-src="../images/bonus_bg.png" class="block full-width" alt="">
+		</div>
+		<div class="bonus-items">
+			<div class="bonus-item" ng-click="envelopeBonus(bonus.user_bonus_id)" ng-repeat="bonus in bonus_list">
+				<div class="bonus-content">
+					<img src="../images/bonus.png" class="pull-left" alt="">
+					<div class="bonus-meta">{{bonus.note}}</div>
+					<div class="bonus-meta">领取红包</div>
+				</div>
+				<div class="bonus-footer">
+					{{bonus.name}}
+				</div>
+			</div>
+			<div class="section text-center m" ng-click="loadMore()">{{page.message}}</div>
+		</div>
+		<!-- <div class="scrollable-footer bg-primary text-white text-center">
+			<div class="section bg-transparent" ng-click="sendBonus()">发红包</div>
+		</div> -->
 	</div>
 </div>
