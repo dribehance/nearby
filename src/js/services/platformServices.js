@@ -124,6 +124,36 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
                     bridge.callHandler("dial", {}, function(data) {});
                 });
             }
+        },
+        editInfo: function() {
+            if (!this.isNative()) {
+                return;
+            }
+            alert("invoke editInfo")
+            // alert("TOKEN_INVALID")
+            if (this.isAndroid()) {
+                android.editInfo();
+            }
+            if (this.isIos()) {
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("editInfo", {}, function(data) {});
+                });
+            }
+        },
+        editPartime: function() {
+            if (!this.isNative()) {
+                return;
+            }
+            alert("invoke editPartime")
+            // alert("TOKEN_INVALID")
+            if (this.isAndroid()) {
+                android.editPartime();
+            }
+            if (this.isIos()) {
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("editPartime", {}, function(data) {});
+                });
+            }
         }
     }
 });

@@ -12,53 +12,59 @@
 <div class="scrollable">
     <div class="scrollable-content">
         <div class="list-group">
-            <div class="list-group-item">
-                <div class="pull-left partime-feature" style="overflow:hidden">
+            <div class="list-group-item" style="overflow:hidden">
+                <div class="pull-left partime-feature">
+                    {{result.job.type}}
                 </div>
                 <div>
-                    <h5>全新利息全程最低分期苹果iphone6</h5>
+                    <h5>{{result.job.title}}</h5>
                     <div style="margin-bottom:5px;">
-                        <i class="kk-icon kk-16 kk-location"></i><span>福田-0.9公里</span>
-                        <i class="kk-icon kk-16 kk-time"></i><span>2015-07-31</span>
-                        <span>￥18元/小时</span>
+                        <i class="kk-icon kk-16 kk-location"></i><span>{{result.job.area}}</span>
+                        <i class="kk-icon kk-16 kk-time"></i><span>{{result.job.post_time}}</span>
+                        <span>{{result.job.price|currency:"￥"}}</span>
                     </div>
                 </div>
             </div>
             <div class="divide divide-10"></div>
             <div class="list-group-item">
-            	工作区域：<b>龙岗</b>
+            	工作区域：<b>{{result.job.area}}</b>
             </div>
             <div class="list-group-item">
-            	工作时间：<b>11月09日至12月22日</b>
+            	工作时间：<b>{{result.job.start_date}}至{{result.job.end_date}}</b>
             </div>
             <div class="list-group-item">
-            	招募人数：<b>男20人，女0人</b>
+            	招募人数：<span ng-if="result.job.is_sex_division == '1'"><b>男{{result.job.man_people}}人，女{{result.job.women_people}}人</b></span>
+                <span ng-if="result.job.is_sex_division != '1'">{{result.job.total_people}}人</span>
             </div>
             <div class="list-group-item">
-            	结算方式：<b>完工结</b>
+            	结算方式：<b ng-if="result.job.clearing_type == 0">日结</b>
+                <b ng-if="result.job.clearing_type == 1">周结</b>
+                <b ng-if="result.job.clearing_type == 2">完工结</b>
             </div>
             <div class="list-group-item">
-            	详细地址：<b>深圳宝安财富港国际中心D座5楼503</b>
+            	详细地址：<b>{{result.job.street}}</b>
                 <span class="pull-right"><i class="kk-icon kk-map"></i></span>
             </div>
             <div class="divide divide-10"></div>
             <div class="list-group-item">
-            	发布商家：<b>Dribehance</b>
-                <span class="pull-right"><i class="kk-icon kk-shi"></i></span>
-                <span class="pull-right"><i class="kk-icon kk-bao"></i></span>
+            	发布商家：<b>{{result.company.name}}</b>
+                <i class="kk-icon pull-right kk-16 kk-shi" ng-if="result.company.is_real_name == '1'"></i>
+                <i class="kk-icon pull-right kk-16 kk-bao" ng-if="result.company.is_guarantee == '1'"></i>
+                <i class="kk-icon pull-right kk-16 kk-v{{result.company.v}}"></i> 
             </div>
             <div class="divide divide-10"></div>
             <div class="list-group-item">
                 <div>兼职描述</div>
-                <b>文本介绍</b>
+                <b>{{result.job.details}}</b>
             </div>
         </div>
     </div>
     <div class="scrollable-footer">
     	<div class="info-action">
-            <span>张小姐<i class="text-large">4000-4000-000</i></span>
+            <span>咨询商家<i class="text-large">{{result.company.telephone}}</i></span>
             <i class="kk-icon kk-40 kk-share pull-right bg-white"></i>
-            <i class="kk-icon kk-40 kk-save pull-right bg-white"></i>
+            <i class="kk-icon kk-40 kk-save pull-right bg-white" ng-if="result.is_job_collect == 1" ng-click="unsave()"></i>
+            <i class="kk-icon kk-40 kk-unsave pull-right bg-white" ng-if="result.is_job_collect != 1" ng-click="save()"></i>
             <i class="kk-icon kk-40 kk-phone pull-right bg-white"></i>
         </div>
     </div>

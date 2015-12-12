@@ -1,4 +1,5 @@
 // by dribehance <dribehance.kksdapp.com>
-var incomeController = function($scope,errorServices,toastServices,localStorageService,config){
-	
+var incomeController = function($scope,$routeParams, errorServices, toastServices, localStorageService, config) {
+	$scope.income = $routeParams.income;
+	$scope.share_code = $routeParams.share_code;
 }

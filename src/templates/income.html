@@ -10,12 +10,12 @@
             <div class="back-action" ng-click="back()"><i class="fa fa-chevron-left"></i></div>
             <div class="title text-center">推广收入</div>
             <div class="income-statistics text-center">
-                <p class="text-very-big">3600</p>
+                <p class="text-very-big">{{income|currency:"￥"}}</p>
                 <span>元</span>
             </div>
         </div>
         <div class="list-group-item">
-        	分享推荐码 <b class="text-primary">7758258</b> <i class="kk-icon kk-share-1 pull-right"></i>
+        	分享推荐码 <b class="text-primary">{{share_code}}</b> <i class="kk-icon kk-share-1 pull-right"></i>
         </div>
         <div class="divide divide-10"></div>
         <div class="list-group-item">

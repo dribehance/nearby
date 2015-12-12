@@ -58,9 +58,11 @@
         }
     }
 }
+
 .section.large {
     padding: 16px 10px;
 }
+
 .info-banner {
     position: relative;
     overflow: hidden;
@@ -74,6 +76,7 @@
         background-color: fade(black, 50%);
     }
 }
+
 .info-action {
     height: 40px;
     line-height: 40px;
@@ -83,20 +86,22 @@
     span {
         display: inline-block;
         max-width: 200px;
-        overflow:hidden;
-        text-overflow:ellipsis;
+        overflow: hidden;
+        text-overflow: ellipsis;
         white-space: nowrap;
         i {
             font-style: normal;
         }
     }
 }
+
 .divide {
     display: block;
     &.divide-10 {
         height: 10px;
     }
 }
+
 .close-1 {
     display: inline-block;
     width: 30px;
@@ -109,6 +114,7 @@
     border-radius: 100%;
     -webkit-border-radius: 100%;
 }
+
 .scrollable-dialog {
     position: absolute;
     left: 0;
@@ -131,16 +137,20 @@
         overflow: scroll;
     }
 }
+
 .previewer {
-    .owl-wrapper-outer,.owl-wrapper,.owl-item{
+    .owl-wrapper-outer,
+    .owl-wrapper,
+    .owl-item {
         height: 100%;
     }
 }
+
 .navtab {
     position: absolute;
     left: 0;
     right: 0;
-    top:12px;
+    top: 12px;
     width: 150px;
     margin: auto auto;
     border: 1px solid @brand-primary;
@@ -150,7 +160,7 @@
     span {
         float: left;
         width: 50%;
-        padding:3px 8px;
+        padding: 3px 8px;
         text-align: center;
     }
     span.active {
@@ -158,10 +168,12 @@
         color: white;
     }
 }
+
 .partime-feature {
     display: inline-block;
     width: 45px;
     height: 45px;
+    line-height: 45px;
     margin-right: 8px;
     border-radius: 100%;
     -webkit-border-radius: 100%;
@@ -170,6 +182,7 @@
     text-align: center;
     vertical-align: middle;
 }
+
 .company-feature {
     display: inline-block;
     width: 45px;
@@ -178,6 +191,7 @@
     text-align: center;
     vertical-align: middle;
 }
+
 .income-header {
     color: white;
     background-color: @brand-primary;
@@ -203,4 +217,35 @@
         right: 0;
         top: 47px;
     }
+}
+
+.bill-items {
+    padding-top: 10px;
+    .bill-item {
+        display: block;
+        width: 93%;
+        padding:8px;
+        margin: auto auto 10px;
+        background-color: white;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-top: 1px solid fade(black, 10%);
+        border-left: 1px solid fade(black, 10%);
+        overflow: hidden;
+        box-shadow: 1px 2px fade(black, 90%);
+        -webkit-box-shadow: 1px 2px fade(black, 10%);
+    }
+}
+
+.bills-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 90%;
+    margin: auto auto;
+    z-index: 1080;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    overflow: hidden;
 }

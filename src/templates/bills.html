@@ -1,0 +1,56 @@
+<!-- by dribehance <dribehance.kksdapp.com> -->
+<div ui-content-for="title">
+	<span ui-turn-on="bill_type_panel">账单流水<i class="fa fa-caret-down"></i></span>
+</div>
+<div ui-content-for="navbarAction"></div>
+<div ui-content-for="backAction">
+    <span class="btn" ng-click="back()"><i class="fa fa-chevron-left"></i></span>
+</div>
+<div class="scrollable">
+    <div class="scrollable-content">
+        <div class="bill-items">
+            <div class="bill-item" ng-repeat="bill in bills">
+                <p>{{bill.nickname}}</p>
+                <p>你的账号最新交易信息</p>
+                <p>交易时间：{{bill.post_time}}</p>
+                <p>交易类型：{{getType(bill.type)}}</p>
+                <p>交易金额：{{bill.money}}</p>
+            </div>
+        </div>
+        <div class="section text-center m" ng-click="loadMore()">{{page.message}}</div>
+    </div>
+</div>
+<div ui-content-for="modals">
+    <div class="modal" ui-if="bill_type_panel" ui-state='bill_type_panel'>
+        <div class="modal-backdrop in" ui-turn-off="bill_type_panel"></div>
+        <div class="bills-panel">
+            <div class="list-group text-center">
+                <div class="list-group-item" ng-click="selectType(0)">
+                    全部 <i class="fa fa-check pull-right text-primary" ng-if="input.type == 0"></i>
+                </div>
+                <div class="list-group-item" ng-click="selectType(1)">
+                    提现 <i class="fa fa-check pull-right text-primary" ng-if="input.type == 1"></i>
+                </div>
+                <div class="list-group-item" ng-click="selectType(2)">
+                    充值 <i class="fa fa-check pull-right text-primary" ng-if="input.type == 2"></i>
+                </div>
+                <div class="list-group-item" ng-click="selectType(3)">
+                    红包 <i class="fa fa-check pull-right text-primary" ng-if="input.type == 3"></i>
+                </div>
+                <div class="list-group-item" ng-click="selectType(4)">
+                    推广收入 <i class="fa fa-check pull-right text-primary" ng-if="input.type == 4"></i>
+                </div>
+                <div class="list-group-item" ng-click="selectType(5)">
+                    流量支出 <i class="fa fa-check pull-right text-primary" ng-if="input.type == 5"></i>
+                </div>
+                <div class="list-group-item" ng-click="selectType(6)">
+                    其他(升级VIP) <i class="fa fa-check pull-right text-primary" ng-if="input.type == 6"></i>
+                </div>
+                <div class="divide divide-10"></div>
+                <div class="list-group-item text-primary">
+                    取消
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

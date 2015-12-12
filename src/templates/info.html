@@ -9,47 +9,53 @@
 <div class="scrollable">
     <div class="scrollable-content">
         <div class="info-banner" ui-turn-on="preview_panel">
-            <imageview data-rate="750/449"></imageview>
+            <imageview data-rate="750/449" src="result.images[0].image"></imageview>
             <span class="tip">点击查看更多</span>
         </div>
         <div class="list-group">
             <div class="list-group-item">
-                <h5>全新利息全程最低分期苹果iphone6</h5>
+                <h5>{{result.info.title}}</h5>
                 <div style="margin-bottom:5px;">
-                    <i class="kk-icon kk-16 kk-shi"></i>
-                    <i class="kk-icon kk-16 kk-bao"></i>
-                    <i class="kk-icon kk-16 kk-v1"></i> 认准利息全程最低，独家代理
+                    <i class="kk-icon kk-16 kk-shi" ng-if="result.is_real_name == '1'"></i>
+                    <i class="kk-icon kk-16 kk-bao" ng-if="result.is_guarantee == '1'"></i>
+                    <i class="kk-icon kk-16 kk-v{{result.v}}"></i> {{result.info.tip}}
                 </div>
                 <div style="margin-bottom:5px;">
-                    <i class="kk-icon kk-16 kk-location"></i><span>福田-0.9公里</span>
-                    <i class="kk-icon kk-16 kk-time"></i><span>2015-07-31</span>
+                    <i class="kk-icon kk-16 kk-location"></i><span>{{result.info.area}}-{{result.info.distance}}</span>
+                    <i class="kk-icon kk-16 kk-time"></i><span>{{result.info.post_time}}</span>
                 </div>
                 <div class="text-large text-primary">
-                    3600
+                    {{result.info.price|currency:"￥"}}
                 </div>
             </div>
             <div class="divide divide-10"></div>
             <div class="list-group-item">
-                服务：<b>由回家请假-海湾明珠提供</b>
+                服务：<b>由{{result.name}}提供</b>
             </div>
             <div class="list-group-item">
-                提示：<b>由回家请假-海湾明珠提供</b>
+                提示：<b>该商家
+                <span ng-if="result.is_real_name == '1' || result.is_guarantee == '1'">已经</span>
+                <span ng-if="result.is_real_name == '1'">实名认证</span>
+                <span ng-if="result.is_guarantee == '2'">缴纳保证金</span>
+                <span ng-if="!(result.is_real_name == '1' || result.is_guarantee == '1')">为自主商家，用户自己留意</span>
+                </b>
             </div>
             <div class="divide divide-10"></div>
             <div class="list-group-item">
                 <div>服务详情</div>
-                <b>文本介绍</b>
+                <b>{{result.info.details}}</b>
             </div>
             <div class="list-group-item" ng-click="getLocation()">
-                提示：<b>深圳宝安财富港国际中心D座5楼503</b>
+                详细地址：<b>{{result.info.address}}</b>
                 <span class="pull-right"><i class="kk-icon kk-map"></i></span>
             </div>
         </div>
     </div>
     <div class="scrollable-footer">
         <div class="info-action">
-            <span>张小姐<i class="text-large">4000-4000-000</i></span>
-            <i class="kk-icon kk-40 kk-save pull-right bg-white"></i>
+            <span>{{result.incharge}}<i class="text-large">{{result.telephone}}</i></span>
+            <i class="kk-icon kk-40 kk-save pull-right bg-white" ng-if="result.is_collect == '1'" ng-click="unsave()"></i>
+            <i class="kk-icon kk-40 kk-unsave pull-right bg-white" ng-if="result.is_collect != '1'" ng-click="save()"></i>
             <i class="kk-icon kk-40 kk-phone pull-right bg-white"></i>
         </div>
     </div>
@@ -65,8 +71,8 @@
             </div>
             <!-- banner -->
             <previewer data-options="{autoPlay:10000}" class="previewer" data-rate="750/950">
-                <div class="image-holder full-width full-height" ng-repeat="b in preview_images" on-repeat-done>
-                    <img ng-src="{{b}}" show-on-loaded alt="">
+                <div class="image-holder full-width full-height" ng-repeat="b in result.images" on-repeat-done>
+                    <img ng-src="{{staticImageUrl + b.image}}" err-src="../images/default.jpg" show-on-loaded alt="">
                 </div>
             </previewer>
         </div>

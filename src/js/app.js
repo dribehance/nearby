@@ -58,6 +58,11 @@ angular.module("Nearby", [
             reloadOnSearch: false,
             controller: incomeController
         })
+        .when("/bills", {
+            templateUrl: "bills.html",
+            reloadOnSearch: false,
+            controller: billsController
+        })
         .when("/management/info", {
             templateUrl: "management_info.html",
             reloadOnSearch: false,
