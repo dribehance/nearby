@@ -7,24 +7,31 @@
 <div class="scrollable">
     <div class="scrollable-content">
         <banner class="banner">
-            <imageview src="banner" ng-repeat="banner in banners" data-rate="750/449" on-repeat-done></imageview>
+            <imageview src="banner.image" ng-repeat="banner in result.driver.images" data-rate="750/449" on-repeat-done></imageview>
         </banner>
         <div class="list-group">
             <div class="list-group-item">
-                <h5>今天（周二）11:40</h5>
+                <h5>{{result.driver.publish_date}}</h5>
                 <span class="pull-left kk-icon kk-subway"></span>
                 <div class="clearfixed">
-                    <div>财富港国际中心 <span class="pull-right text-primary text-ellipsis">上下班</span></div>
-                    <div>宝雅花园 <span class="pull-right text-ellipsis">找人中</span></div>
+                    <div>{{result.driver.from_place}}
+                        <span class="pull-right text-primary text-ellipsis" ng-if="result.driver.type == '0'">
+                        上下班
+                        </span>
+                        <span class="pull-right text-primary text-ellipsis" ng-if="result.driver.type == '1'">
+                        长途旅游
+                        </span>
+                    </div>
+                    <div>{{result.driver.destination}} <span class="pull-right text-ellipsis">找人中</span></div>
                 </div>
                 <div class="divide divide-10"></div>
                 快速导航<i class="kk-icon kk-map" style="margin-top:-2px;margin-left:5px"></i>
             </div>
             <div class="list-group-item">
-                车型：<b>SUV</b>
+                车型：<b>{{result.driver.brand}}</b>
             </div>
             <div class="list-group-item">
-                车牌：<b>粤L 9T453</b>
+                车牌：<b>{{result.driver.license}}</b>
             </div>
         </div>
     </div>
@@ -32,7 +39,8 @@
         <div class="info-action">
             <span>联系车主</span>
             <i class="kk-icon kk-40 kk-share pull-right bg-white"></i>
-            <i class="kk-icon kk-40 kk-save pull-right bg-white"></i>
+            <i class="kk-icon kk-40 kk-save pull-right bg-white" ng-if="result.driver.is_collect == '1'" ng-click="unsave()"></i>
+            <i class="kk-icon kk-40 kk-unsave pull-right bg-white" ng-if="result.driver.is_collect != '1'" ng-click="save()"></i>
             <i class="kk-icon kk-40 kk-phone pull-right bg-white"></i>
         </div>
     </div>

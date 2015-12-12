@@ -1,4 +1,48 @@
 // by dribehance <dribehance.kksdapp.com>
-var pingController = function($scope,errorServices,toastServices,localStorageService,config){
-	$scope.banners = ["../images/default.jpg","../images/bonus_bg.png"];	
+var pingController = function($scope, $routeParams, pingServices, errorServices, toastServices, localStorageService, config) {
+    $scope.token = $routeParams.token;
+    toastServices.show();
+    pingServices.queryById({
+        token: $scope.token,
+        driver_publish_id: $routeParams.driver_publish_id
+    }).then(function(data) {
+        toastServices.hide()
+        if (data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
+        	$scope.result = data;
+        } else {
+            errorServices.autoHide("服务器错误");
+        }
+    });
+    $scope.save = function() {
+        toastServices.show();
+        pingServices.save({
+            token:$scope.token,
+            driver_publish_id:$routeParams.driver_publish_id
+        }).then(function(data){
+            toastServices.hide()
+            if(data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
+                $scope.result.driver.is_collect = 1;
+                errorServices.autoHide(data.message);        
+            }
+            else {
+                errorServices.autoHide("服务器错误");
+            }
+        })
+    }
+    $scope.unsave = function() {
+        toastServices.show();
+        pingServices.unsave({
+            token:$scope.token,
+            driver_publish_id:$routeParams.driver_publish_id
+        }).then(function(data){
+            toastServices.hide()
+            if(data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
+                $scope.result.driver.is_collect = 0;
+                errorServices.autoHide(data.message)        
+            }
+            else {
+                errorServices.autoHide("服务器错误");
+            }
+        })
+    }
 }
