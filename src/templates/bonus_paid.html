@@ -5,18 +5,18 @@
     <span class="btn" ng-click="back()"><i class="fa fa-chevron-left"></i></span>
 </div>
 <div class="scrollable">
-    <div class="scrollable-content">
-        <div class="scrollable-header bonus-header">
-            <div class="back-action" ng-click="back()"><i class="fa fa-chevron-left"></i></div>
-            <div class="nav-action" ng-click="queryReceivedBonus()">收到的</div>
-            <div class="title text-center">红包</div>
-            <div class="bonus-statistics text-center">
-                <p>共发出</p>
-                <p class="text-very-big">{{total_bonus_money|currency:"￥"}}</p>
-                <span>{{total_bonus_amount}}(个)</span>
-            </div>
-            <imageview src="imageview_src" data-rate="640/270"></imageview>
+    <div class="scrollable-header bonus-header">
+        <div class="back-action" ng-click="back()"><i class="fa fa-chevron-left"></i></div>
+        <div class="nav-action" ng-click="queryReceivedBonus()">收到的</div>
+        <div class="title text-center">红包</div>
+        <div class="bonus-statistics text-center">
+            <p>共发出</p>
+            <p class="text-very-big">{{total_bonus_money|currency:"￥"}}</p>
+            <span>{{total_bonus_amount}}(个)</span>
         </div>
+        <imageview src="imageview_src" data-rate="640/270"></imageview>
+    </div>
+    <div class="scrollable-content">
         <div class="bonus-items">
             <div class="bonus-item" ng-repeat="bonus in bonus_paid">
                 <div class="bonus-content">

@@ -1,7 +1,7 @@
 <div class="scrollable">
     <div class="scrollable-content">
-        <section class="section container-fluid">
-            <div>
+        <div class="list-group">
+            <div class="list-group-item">
                 <h4>信息详情:</h4>
                 <div><b>path</b></div>
                 <div>/info</div>
@@ -9,7 +9,7 @@
                 token,info_id,user_latitude,user_longitude
                 <p><a ng-href="#/info?token=41636ebf2995edd27ac90fbecf04654a&info_id=1&user_latitude=23.333&user_longitude=190.222">Try it</a></p>
             </div>
-            <div>
+            <div class="list-group-item">
                 <h4>兼职详情:</h4>
                 <div><b>path</b></div>
                 <div>/partime</div>
@@ -17,7 +17,7 @@
                 token,job_id
                 <p><a ng-href="#/partime?token=41636ebf2995edd27ac90fbecf04654a&job_id=1">Try it</a></p>
             </div>
-            <div>
+            <div class="list-group-item">
                 <h4>企业详情:</h4>
                 <div><b>path</b></div>
                 <div>/partime/company</div>
@@ -25,7 +25,7 @@
                 token,company_id
                 <p><a ng-href="#/partime/company?token=41636ebf2995edd27ac90fbecf04654a&company_id=1">Try it</a></p>
             </div>
-            <div>
+            <div class="list-group-item">
                 <h4>拼车详情:</h4>
                 <div><b>path</b></div>
                 <div>/ping</div>
@@ -33,7 +33,7 @@
                 token,driver_publish_id
                 <p><a ng-href="#/ping?token=4&driver_publish_id=13">Try it</a></p>
             </div>
-            <div>
+            <div class="list-group-item">
                 <h4>红包:</h4>
                 <div><b>path</b></div>
                 <div>/bonus</div>
@@ -41,7 +41,7 @@
                 token
                 <p><a ng-href="#/bonus?token=41636ebf2995edd27ac90fbecf04654a">Try it</a></p>
             </div>
-            <div>
+            <div class="list-group-item">
                 <h4>领红包:</h4>
                 <div><b>path</b></div>
                 <div>/bonus/envelope</div>
@@ -49,7 +49,7 @@
                 token,user_bonus_id
                 <p><a ng-href="#/bonus/envelope?token=41636ebf2995edd27ac90fbecf04654a&user_bonus_id=292">Try it</a></p>
             </div>
-            <div>
+            <div class="list-group-item">
                 <h4>红包记录-发出:</h4>
                 <div><b>path</b></div>
                 <div>/bonus/paid</div>
@@ -57,7 +57,7 @@
                 token
                 <p><a ng-href="#/bonus/paid?token=41636ebf2995edd27ac90fbecf04654a">Try it</a></p>
             </div>
-            <div>
+            <div class="list-group-item">
                 <h4>红包记录-收到:</h4>
                 <div><b>path</b></div>
                 <div>/bonus/paid</div>
@@ -65,7 +65,7 @@
                 token,user_bonus_id
                 <p><a ng-href="#/bonus/received?token=41636ebf2995edd27ac90fbecf04654a">Try it</a></p>
             </div>
-            <div>
+            <div class="list-group-item">
                 <h4>推广收入:</h4>
                 <div><b>path</b></div>
                 <div>/income</div>
@@ -73,7 +73,7 @@
                 income,share_code
                 <p><a ng-href="#/income?income=3600&share_code=7758258">Try it</a></p>
             </div>
-            <div>
+            <div class="list-group-item">
                 <h4>账单流水:</h4>
                 <div><b>path</b></div>
                 <div>/bills</div>
@@ -81,7 +81,7 @@
                 income,share_code
                 <p><a ng-href="#/bills?token=41636ebf2995edd27ac90fbecf04654a">Try it</a></p>
             </div>
-            <div>
+            <div class="list-group-item">
                 <h4>信息管理-信息详情:</h4>
                 <div><b>path</b></div>
                 <div>/management/info</div>
@@ -89,15 +89,15 @@
                 token,info_id,user_latitude,user_longitude
                 <p><a ng-href="#/management/info?token=41636ebf2995edd27ac90fbecf04654a&info_id=1&user_latitude=23.333&user_longitude=190.222">Try it</a></p>
             </div>
-            <div>
+            <div class="list-group-item">
                 <h4>兼职管理-兼职详情:</h4>
                 <div><b>path</b></div>
                 <div>/management/partime</div>
                 <div><b>params</b></div>
                 token,job_id
-                <p><a ng-href="#/partime?token=41636ebf2995edd27ac90fbecf04654a&job_id=1">Try it</a></p>
+                <p><a ng-href="#/management/partime?token=41636ebf2995edd27ac90fbecf04654a&job_id=1">Try it</a></p>
             </div>
-            <div>
+            <div class="list-group-item">
                 <h4>认证商家:</h4>
                 <div><b>path</b></div>
                 <div>/authenication/company</div>
@@ -106,22 +106,27 @@
                 <p><a ng-href="#/authenication/company?token=4&is_authen=1">Try it</a></p>
             </div>
             <div class="divide divide-10"></div>
-            <h4>FUNCTION</h4>
-            <div>
-                <span class="text-primary">toLogin</span>[function]登录
+            <div class="list-group-item">
+                <h4>FUNCTION</h4>
+                <div>
+                    <span class="text-primary">androidBack/iosBack</span>[function]返回
+                </div>
+                <div>
+                    <span class="text-primary">toLogin</span>[function]登录
+                </div>
+                <div>
+                    <span class="text-primary">sendBonus</span>[function]发送红包
+                </div>
+                <div>
+                    <span class="text-primary">share</span>[function]分享
+                </div>
+                <div>
+                    <span class="text-primary">getLocation</span>[function]定位导航
+                </div>
+                <div>
+                    <span class="text-primary">dial</span>[function]拨号
+                </div>
             </div>
-            <div>
-                <span class="text-primary">sendBonus</span>[function]发送红包
-            </div>
-            <div>
-                <span class="text-primary">share</span>[function]分享
-            </div>
-            <div>
-                <span class="text-primary">getLocation</span>[function]定位导航
-            </div>
-            <div>
-                <span class="text-primary">dial</span>[function]拨号
-            </div>
-        </section>
+        </div>
     </div>
 </div>

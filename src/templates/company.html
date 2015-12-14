@@ -1,7 +1,7 @@
 <!-- by dribehance <dribehance.kksdapp.com> -->
 <div ui-content-for="title">
     <div class="navtab" ui-state="activeTab" default="2">
-        <span ui-class="{'active':activeTab =='1'}" ui-set="{'activeTab': 1}">兼职信息</span>
+        <span ui-class="{'active':activeTab =='1'}" ng-click="navToPartime()">兼职信息</span>
         <span ui-class="{'active':activeTab =='2'}" ui-set="{'activeTab': 2}">企业信息</span>
     </div>
 </div>
@@ -14,7 +14,7 @@
         <div class="list-group">
             <div class="list-group-item" style="overflow:hidden">
                 <div class="pull-left company-feature">
-                    <imageview src="result.company.logo" data-rate="1"></imageview>
+                    <imageview src="staticImageUrl + result.company.logo" data-rate="1"></imageview>
                 </div>
                 <div>
                     <h5>{{result.company.name}}</h5>

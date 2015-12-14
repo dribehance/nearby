@@ -5,13 +5,13 @@
     <span class="btn" ng-click="back()"><i class="fa fa-chevron-left"></i></span>
 </div>
 <div class="scrollable">
+    <div class="scrollable-header bonus-header">
+        <div class="back-action" ng-click="back()"><i class="fa fa-chevron-left"></i></div>
+        <div class="nav-action" ng-click="queryBonusRecords()">红包记录</div>
+        <div class="title text-center">领取红包</div>
+        <imageview src="imageview_src" data-rate="640/270"></imageview>
+    </div>
     <div class="scrollable-content">
-        <div class="scrollable-header bonus-header">
-            <div class="back-action" ng-click="back()"><i class="fa fa-chevron-left"></i></div>
-            <div class="nav-action" ng-click="queryBonusRecords()">红包记录</div>
-            <div class="title text-center">领取红包</div>
-            <imageview src="imageview_src" data-rate="640/270"></imageview>
-        </div>
         <div class="text-center section bg-transparent">
             <span class="text-gray">红包由</span>
             <b>{{bonus.name}}</b>

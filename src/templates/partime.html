@@ -2,7 +2,7 @@
 <div ui-content-for="title">
     <div class="navtab" ui-state="activeTab" default="1">
         <span ui-class="{'active':activeTab =='1'}" ui-set="{'activeTab': 1}">兼职信息</span>
-        <span ui-class="{'active':activeTab =='2'}" ui-set="{'activeTab': 2}">企业信息</span>
+        <span ui-class="{'active':activeTab =='2'}" ng-click="navToCompany()">企业信息</span>
     </div>
 </div>
 <div ui-content-for="navbarAction"></div>
@@ -13,7 +13,7 @@
     <div class="scrollable-content">
         <div class="list-group">
             <div class="list-group-item" style="overflow:hidden">
-                <div class="pull-left partime-feature">
+                <div class="pull-left partime-feature" ng-style="{'background-color':result.job.color}">
                     {{result.job.type}}
                 </div>
                 <div>
@@ -46,7 +46,7 @@
                 <span class="pull-right"><i class="kk-icon kk-map"></i></span>
             </div>
             <div class="divide divide-10"></div>
-            <div class="list-group-item">
+            <div class="list-group-item" ng-click="navToCompany()">
             	发布商家：<b>{{result.company.name}}</b>
                 <i class="kk-icon pull-right kk-16 kk-shi" ng-if="result.company.is_real_name == '1'"></i>
                 <i class="kk-icon pull-right kk-16 kk-bao" ng-if="result.company.is_guarantee == '1'"></i>
@@ -61,11 +61,11 @@
     </div>
     <div class="scrollable-footer">
     	<div class="info-action">
-            <span>咨询商家<i class="text-large">{{result.company.telephone}}</i></span>
-            <i class="kk-icon kk-40 kk-share pull-right bg-white"></i>
+            <span ng-click="dial()">咨询商家<i class="text-large">{{result.company.telephone}}</i></span>
+            <i class="kk-icon kk-40 kk-share pull-right bg-white" ng-click="share()"></i>
             <i class="kk-icon kk-40 kk-save pull-right bg-white" ng-if="result.is_job_collect == 1" ng-click="unsave()"></i>
             <i class="kk-icon kk-40 kk-unsave pull-right bg-white" ng-if="result.is_job_collect != 1" ng-click="save()"></i>
-            <i class="kk-icon kk-40 kk-phone pull-right bg-white"></i>
+            <i class="kk-icon kk-40 kk-phone pull-right bg-white" ng-click="dial()"></i>
         </div>
     </div>
 </div>

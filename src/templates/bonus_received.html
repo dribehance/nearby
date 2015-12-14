@@ -2,33 +2,33 @@
 <div ui-content-for="title">红包</div>
 <div ui-content-for="navbarAction"></div>
 <div ui-content-for="backAction">
-	<span class="btn" ng-click="back()"><i class="fa fa-chevron-left"></i></span>
+    <span class="btn" ng-click="back()"><i class="fa fa-chevron-left"></i></span>
 </div>
 <div class="scrollable">
-	<div class="scrollable-content">
-		<div class="scrollable-header bonus-header">
-			<div class="back-action" ng-click="back()"><i class="fa fa-chevron-left"></i></div>
-			<div class="nav-action" ng-click="queryPaidBonus()">发出的</div>
-			<div class="title text-center">红包</div>
-			<div class="bonus-statistics text-center">
-				<p>共收到</p>
-				<p class="text-very-big">{{total_bonus_money|currency:"￥"}}</p>
-				<span>{{total_bonus_amount}}(个)</span>
-			</div>
-			<imageview src="imageview_src" data-rate="640/270"></imageview>
-		</div>
-		<div class="bonus-items">
-			<div class="bonus-item" ng-repeat="bonus in bonus_received">
-				<div class="bonus-content">
-					<img src="../images/bonus.png" class="pull-left" alt="">
-					<div class="bonus-meta">{{bonus.note}} <span class="pull-right">{{bonus.money|currency:"￥"}}</span></div>
-					<div class="bonus-meta">已领取<span class="pull-right">{{bonus.post_time}}</span></div>
-				</div>
-				<div class="bonus-footer">
-					{{bonus.name}}
-				</div>
-			</div>
-		</div>
-		<div class="section text-center m" ng-click="loadMore()">{{page.message}}</div>
-	</div>
+    <div class="scrollable-header bonus-header">
+        <div class="back-action" ng-click="back()"><i class="fa fa-chevron-left"></i></div>
+        <div class="nav-action" ng-click="queryPaidBonus()">发出的</div>
+        <div class="title text-center">红包</div>
+        <div class="bonus-statistics text-center">
+            <p>共收到</p>
+            <p class="text-very-big">{{total_bonus_money|currency:"￥"}}</p>
+            <span>{{total_bonus_amount}}(个)</span>
+        </div>
+        <imageview src="imageview_src" data-rate="640/270"></imageview>
+    </div>
+    <div class="scrollable-content">
+        <div class="bonus-items">
+            <div class="bonus-item" ng-repeat="bonus in bonus_received">
+                <div class="bonus-content">
+                    <img src="../images/bonus.png" class="pull-left" alt="">
+                    <div class="bonus-meta">{{bonus.note}} <span class="pull-right">{{bonus.money|currency:"￥"}}</span></div>
+                    <div class="bonus-meta">已领取<span class="pull-right">{{bonus.post_time}}</span></div>
+                </div>
+                <div class="bonus-footer">
+                    {{bonus.name}}
+                </div>
+            </div>
+        </div>
+        <div class="section text-center m" ng-click="loadMore()">{{page.message}}</div>
+    </div>
 </div>

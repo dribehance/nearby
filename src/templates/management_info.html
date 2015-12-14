@@ -9,7 +9,7 @@
 <div class="scrollable">
     <div class="scrollable-content">
         <div class="info-banner" ui-turn-on="preview_panel">
-            <imageview data-rate="750/449" src="result.images[0].image"></imageview>
+            <imageview data-rate="750/449" src="staticImageUrl + result.images[0].image"></imageview>
             <span class="tip">点击查看更多</span>
         </div>
         <div class="list-group">
@@ -53,10 +53,10 @@
     </div>
     <div class="scrollable-footer">
         <div class="info-action">
-            <span>{{result.incharge}}<i class="text-large">{{result.telephone}}</i></span>
+            <span ng-click="dial()">{{result.incharge}}<i class="text-large">{{result.telephone}}</i></span>
             <i class="kk-icon kk-40 kk-save pull-right bg-white" ng-if="result.is_collect == '1'" ng-click="unsave()"></i>
             <i class="kk-icon kk-40 kk-unsave pull-right bg-white" ng-if="result.is_collect != '1'" ng-click="save()"></i>
-            <i class="kk-icon kk-40 kk-phone pull-right bg-white"></i>
+            <i class="kk-icon kk-40 kk-phone pull-right bg-white" ng-click="dial()"></i>
         </div>
     </div>
 </div>
