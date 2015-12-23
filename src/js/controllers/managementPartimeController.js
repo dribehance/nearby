@@ -1,5 +1,5 @@
 // by dribehance <dribehance.kksdapp.com>
-var managementPartimeController = function($scope,$routeParams,partimeServices, errorServices, toastServices, localStorageService, config) {
+var managementPartimeController = function($scope,$routeParams,partimeServices,platformServices, errorServices, toastServices, localStorageService, config) {
 	$scope.token = $routeParams.token;
     toastServices.show();
     partimeServices.queryById({
