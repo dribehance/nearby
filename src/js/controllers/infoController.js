@@ -49,12 +49,14 @@ var infoController = function($scope,$routeParams,infoServices, platformServices
         })
     }
     $scope.dial = function () {
-    	platformServices.dial();
+    	platformServices.dial({
+            telephone:$scope.result.telephone
+        });
     }
     $scope.getLocation = function() {
-        platformServices.getLocation();
+        platformServices.getLocation($scope.result);
     }
     $scope.share = function() {
-        platformServices.share();
+        platformServices.share($scope.result);
     }
 }

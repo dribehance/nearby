@@ -1,5 +1,5 @@
 // by dribehance <dribehance.kksdapp.com>
-var companyController = function($scope, $routeParams, $location, partimeServices, errorServices, toastServices, localStorageService, config) {
+var companyController = function($scope, $routeParams, $location, platformServices, partimeServices, errorServices, toastServices, localStorageService, config) {
     $scope.token = $routeParams.token;
     toastServices.show();
     partimeServices.queryCompanyInfo({
@@ -18,5 +18,11 @@ var companyController = function($scope, $routeParams, $location, partimeService
             token: $scope.token,
             job_id: $routeParams.job_id
         }).replace()
+    }
+    $scope.getLocation = function() {
+        platformServices.getLocation($scope.result);
+    }
+    $scope.queryRelativeJobs = function() {
+        platformServices.queryRelativeJobs();
     }
 }

@@ -49,10 +49,12 @@ var managementInfoController = function($scope,$routeParams,infoServices, platfo
         })
     }
     $scope.dial = function () {
-    	platformServices.dial();
+        platformServices.dial({
+            telephone:$scope.result.telephone
+        });
     }
     $scope.getLocation = function() {
-        platformServices.getLocation();
+        platformServices.getLocation($scope.result);
     }
     $scope.editInfo = function() {
         platformServices.editInfo();

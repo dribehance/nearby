@@ -29,7 +29,7 @@
             <div class="list-group-item">
                 综合评价：<b>{{result.company.star}}</b>
             </div>
-            <div class="list-group-item">
+            <div class="list-group-item clearfix" ng-click="getLocation()">
                 详细地址：<b>{{result.company.address}}</b>
                 <span class="pull-right"><i class="kk-icon kk-map"></i></span>
             </div>
@@ -51,7 +51,7 @@
                 <div>相关简介</div>
                 <b>简介</b>
             </div>
-            <div class="list-group-item">
+            <div class="list-group-item" ng-click="queryRelativeJobs()">
                 TA发布的其他兼职 <span class="pull-right">{{result.other_count}} <i class="fa fa-chevron-right"></i></span>
             </div>
         </div>

@@ -47,10 +47,12 @@ var managementPartimeController = function($scope,$routeParams,partimeServices,p
         })
     }
     $scope.dial = function () {
-    	platformServices.dial();
+        platformServices.dial({
+            telephone:$scope.result.company.telephone
+        });
     }
     $scope.getLocation = function() {
-        platformServices.getLocation();
+        platformServices.getLocation($scope.result);
     }
     $scope.editPartime = function() {
         platformServices.editPartime();

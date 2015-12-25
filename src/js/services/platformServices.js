@@ -65,10 +65,11 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
                 });
             }
         },
-        sendBonus: function() {
+        sendBonus: function(input) {
             if (!this.isNative()) {
                 return;
             }
+            alert(JSON.stringify(input))
             alert("invoke sendBonus")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
@@ -76,14 +77,15 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             }
             if (this.isIos()) {
                 $window.connectWebViewJavascriptBridge(function(bridge) {
-                    bridge.callHandler("sendBonus", {}, function(data) {});
+                    bridge.callHandler("sendBonus", input, function(data) {});
                 });
             }
         },
-        getLocation: function() {
+        getLocation: function(input) {
             if (!this.isNative()) {
                 return;
             }
+            alert(JSON.stringify(input))
             alert("invoke getLocation")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
@@ -91,14 +93,31 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             }
             if (this.isIos()) {
                 $window.connectWebViewJavascriptBridge(function(bridge) {
-                    bridge.callHandler("getLocation", {}, function(data) {});
+                    bridge.callHandler("getLocation", input, function(data) {});
                 });
             }
         },
-        share: function() {
+        queryRelativeJobs: function(input) {
             if (!this.isNative()) {
                 return;
             }
+            alert(JSON.stringify(input))
+            alert("invoke queryRelativeJobs")
+            // alert("TOKEN_INVALID")
+            if (this.isAndroid()) {
+                android.queryRelativeJobs();
+            }
+            if (this.isIos()) {
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("queryRelativeJobs", input, function(data) {});
+                });
+            }
+        },
+        share: function(input) {
+            if (!this.isNative()) {
+                return;
+            }
+            alert(JSON.stringify(input))
             alert("invoke share")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
@@ -106,14 +125,15 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             }
             if (this.isIos()) {
                 $window.connectWebViewJavascriptBridge(function(bridge) {
-                    bridge.callHandler("share", {}, function(data) {});
+                    bridge.callHandler("share", input, function(data) {});
                 });
             }
         },
-        dial: function() {
+        dial: function(input) {
             if (!this.isNative()) {
                 return;
             }
+            alert(JSON.stringify(input))
             alert("invoke dial")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
@@ -121,14 +141,15 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             }
             if (this.isIos()) {
                 $window.connectWebViewJavascriptBridge(function(bridge) {
-                    bridge.callHandler("dial", {}, function(data) {});
+                    bridge.callHandler("dial", input, function(data) {});
                 });
             }
         },
-        editInfo: function() {
+        editInfo: function(input) {
             if (!this.isNative()) {
                 return;
             }
+            alert(JSON.stringify(input))
             alert("invoke editInfo")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
@@ -136,14 +157,15 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             }
             if (this.isIos()) {
                 $window.connectWebViewJavascriptBridge(function(bridge) {
-                    bridge.callHandler("editInfo", {}, function(data) {});
+                    bridge.callHandler("editInfo", input, function(data) {});
                 });
             }
         },
-        editPartime: function() {
+        editPartime: function(input) {
             if (!this.isNative()) {
                 return;
             }
+            alert(JSON.stringify(input))
             alert("invoke editPartime")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
@@ -151,7 +173,7 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             }
             if (this.isIos()) {
                 $window.connectWebViewJavascriptBridge(function(bridge) {
-                    bridge.callHandler("editPartime", {}, function(data) {});
+                    bridge.callHandler("editPartime", input, function(data) {});
                 });
             }
         }

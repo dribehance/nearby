@@ -3,6 +3,6 @@ var incomeController = function($scope, $routeParams, platformServices, errorSer
     $scope.income = $routeParams.income;
     $scope.share_code = $routeParams.share_code;
     $scope.share = function() {
-        platformServices.share();
+        platformServices.share({});
     }
 }

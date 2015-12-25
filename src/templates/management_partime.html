@@ -40,7 +40,7 @@
                 <b ng-if="result.job.clearing_type == 1">周结</b>
                 <b ng-if="result.job.clearing_type == 2">完工结</b>
             </div>
-            <div class="list-group-item">
+            <div class="list-group-item clearfix" ng-click="getLocation()">
                 详细地址：<b>{{result.job.street}}</b>
                 <span class="pull-right"><i class="kk-icon kk-map"></i></span>
             </div>
@@ -61,10 +61,10 @@
     <div class="scrollable-footer">
         <div class="info-action">
             <span>咨询商家<i class="text-large">{{result.company.telephone}}</i></span>
-            <i class="kk-icon kk-40 kk-share pull-right bg-white"></i>
+            <!-- <i class="kk-icon kk-40 kk-share pull-right bg-white"></i> -->
             <i class="kk-icon kk-40 kk-save pull-right bg-white" ng-if="result.is_job_collect == 1" ng-click="unsave()"></i>
             <i class="kk-icon kk-40 kk-unsave pull-right bg-white" ng-if="result.is_job_collect != 1" ng-click="save()"></i>
-            <i class="kk-icon kk-40 kk-phone pull-right bg-white"></i>
+            <i class="kk-icon kk-40 kk-phone pull-right bg-white" ng-click="dial()"></i>
         </div>
     </div>
 </div>

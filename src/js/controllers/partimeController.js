@@ -1,5 +1,5 @@
 // by dribehance <dribehance.kksdapp.com>
-var partimeController = function($scope, $routeParams, $location, partimeServices, errorServices, toastServices, localStorageService, config) {
+var partimeController = function($scope, $routeParams, $location, platformServices, partimeServices, errorServices, toastServices, localStorageService, config) {
     $scope.token = $routeParams.token;
     toastServices.show();
     partimeServices.queryById({
@@ -47,12 +47,14 @@ var partimeController = function($scope, $routeParams, $location, partimeService
         $location.path("partime/company").search("company_id", $scope.result.company.company_id).replace();
     }
     $scope.dial = function() {
-        platformServices.dial();
+        platformServices.dial({
+            telephone: $scope.result.company.telephone
+        });
     }
     $scope.getLocation = function() {
-        platformServices.getLocation();
+        platformServices.getLocation($scope.result);
     }
     $scope.share = function() {
-        platformServices.share();
+        platformServices.share($scope.result);
     }
 }
