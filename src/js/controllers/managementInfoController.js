@@ -25,7 +25,10 @@ var managementInfoController = function($scope,$routeParams,infoServices, platfo
             toastServices.hide()
             if(data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
                 $scope.result.is_collect = 1;
-                errorServices.autoHide(data.message);        
+                errorServices.autoHide(data.message);   
+                platformServices.save({
+                    id:$routeParams.info_id
+                })     
             }
             else {
                 errorServices.autoHide("服务器错误");
@@ -41,7 +44,10 @@ var managementInfoController = function($scope,$routeParams,infoServices, platfo
             toastServices.hide()
             if(data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
                 $scope.result.is_collect = 0;
-                errorServices.autoHide(data.message)        
+                errorServices.autoHide(data.message) 
+                platformServices.unsave({
+                    id:$routeParams.info_id
+                })       
             }
             else {
                 errorServices.autoHide("服务器错误");
@@ -54,7 +60,11 @@ var managementInfoController = function($scope,$routeParams,infoServices, platfo
         });
     }
     $scope.getLocation = function() {
-        platformServices.getLocation($scope.result);
+        platformServices.getLocation({
+            latitude: $scope.result.info.latitude,
+            longitude: $scope.result.info.longitude,
+            address: $scope.result.info.address
+        });
     }
     $scope.editInfo = function() {
         platformServices.editInfo();

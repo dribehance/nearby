@@ -23,7 +23,10 @@ var managementPartimeController = function($scope,$routeParams,partimeServices,p
             toastServices.hide()
             if(data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
             	$scope.result.is_job_collect = 1;
-                errorServices.autoHide(data.message);        
+                errorServices.autoHide(data.message);
+                platformServices.save({
+                    id:$routeParams.job_id
+                })      
             }
             else {
                 errorServices.autoHide("服务器错误");
@@ -39,7 +42,10 @@ var managementPartimeController = function($scope,$routeParams,partimeServices,p
             toastServices.hide()
             if(data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
                	$scope.result.is_job_collect = 0;
-                errorServices.autoHide(data.message)        
+                errorServices.autoHide(data.message);
+                platformServices.unsave({
+                    id:$routeParams.job_id
+                })      
             }
             else {
                 errorServices.autoHide("服务器错误");
@@ -52,7 +58,11 @@ var managementPartimeController = function($scope,$routeParams,partimeServices,p
         });
     }
     $scope.getLocation = function() {
-        platformServices.getLocation($scope.result);
+        platformServices.getLocation({
+            latitude: $scope.result.job.latitude,
+            longitude: $scope.result.job.longitude,
+            address: $scope.result.job.street,
+        });
     }
     $scope.editPartime = function() {
         platformServices.editPartime();

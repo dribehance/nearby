@@ -81,6 +81,38 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
                 });
             }
         },
+        save:function(input){
+            if (!this.isNative()) {
+                return;
+            }
+            alert(JSON.stringify(input))
+            alert("invoke save")
+            // alert("TOKEN_INVALID")
+            if (this.isAndroid()) {
+                android.save();
+            }
+            if (this.isIos()) {
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("save", input, function(data) {});
+                });
+            }
+        },
+        unsave:function(input){
+            if (!this.isNative()) {
+                return;
+            }
+            alert(JSON.stringify(input))
+            alert("invoke unsave")
+            // alert("TOKEN_INVALID")
+            if (this.isAndroid()) {
+                android.unsave();
+            }
+            if (this.isIos()) {
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("unsave", input, function(data) {});
+                });
+            }
+        },
         getLocation: function(input) {
             if (!this.isNative()) {
                 return;

@@ -20,7 +20,12 @@ var companyController = function($scope, $routeParams, $location, platformServic
         }).replace()
     }
     $scope.getLocation = function() {
-        platformServices.getLocation($scope.result);
+        platformServices.getLocation({
+            latitude: $scope.result.company.latitude,
+            longitude: $scope.result.company.longitude,
+            address: $scope.result.company.address,
+            from:"company"
+        });
     }
     $scope.queryRelativeJobs = function() {
         platformServices.queryRelativeJobs();
