@@ -47,9 +47,16 @@ angular.module("Nearby").factory("partimeServices",function($http,config){
 		},
 		authenCompany:function(input) {
 			// input->token
+			var url = "";
+			if (input.is_authen == 0) {
+				url = "/app/InfoManage/identityingCompany";
+			}
+			else {
+				url = "/app/InfoManage/identitiedCompany";
+			}
 			return $http({
 				// by dribehance <dribehance.kksdapp.com>
-			    url: config.url + "/app/InfoManage/identityingCompany",
+			    url: config.url + url,
 			    method: "GET",
 			    params: angular.extend({}, config.common_params, input)
 			}).then(function(data) {
