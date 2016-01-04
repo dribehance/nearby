@@ -69,8 +69,8 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             if (!this.isNative()) {
                 return;
             }
-            alert(JSON.stringify(input))
-            alert("invoke sendBonus")
+            // alert(JSON.stringify(input))
+            // alert("invoke sendBonus")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
                 android.sendBonus();
@@ -85,8 +85,8 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             if (!this.isNative()) {
                 return;
             }
-            alert(JSON.stringify(input))
-            alert("invoke save")
+            // alert(JSON.stringify(input))
+            // alert("invoke save")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
                 android.save();
@@ -101,8 +101,8 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             if (!this.isNative()) {
                 return;
             }
-            alert(JSON.stringify(input))
-            alert("invoke unsave")
+            // alert(JSON.stringify(input))
+            // alert("invoke unsave")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
                 android.unsave();
@@ -117,8 +117,8 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             if (!this.isNative()) {
                 return;
             }
-            alert(JSON.stringify(input))
-            alert("invoke getLocation")
+            // alert(JSON.stringify(input))
+            // alert("invoke getLocation")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
                 android.getLocation();
@@ -133,8 +133,8 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             if (!this.isNative()) {
                 return;
             }
-            alert(JSON.stringify(input))
-            alert("invoke queryRelativeJobs")
+            // alert(JSON.stringify(input))
+            // alert("invoke queryRelativeJobs")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
                 android.queryRelativeJobs();
@@ -149,8 +149,8 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             if (!this.isNative()) {
                 return;
             }
-            alert(JSON.stringify(input))
-            alert("invoke share")
+            // alert(JSON.stringify(input))
+            // alert("invoke share")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
                 android.share();
@@ -165,8 +165,8 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             if (!this.isNative()) {
                 return;
             }
-            alert(JSON.stringify(input))
-            alert("invoke dial")
+            // alert(JSON.stringify(input))
+            // alert("invoke dial")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
                 android.dial();
@@ -181,8 +181,8 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             if (!this.isNative()) {
                 return;
             }
-            alert(JSON.stringify(input))
-            alert("invoke editInfo")
+            // alert(JSON.stringify(input))
+            // alert("invoke editInfo")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
                 android.editInfo();
@@ -197,8 +197,8 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
             if (!this.isNative()) {
                 return;
             }
-            alert(JSON.stringify(input))
-            alert("invoke editPartime")
+            // alert(JSON.stringify(input))
+            // alert("invoke editPartime")
             // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
                 android.editPartime();

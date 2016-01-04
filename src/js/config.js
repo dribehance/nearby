@@ -1,6 +1,6 @@
 angular.module("Nearby").constant("config", {
-    url: "http://souba.kksdapp.com:8080",
-    imageUrl:"http://souba.kksdapp.com:8080/files/image?name=",
+    url: "http://souba.kksdapp.com",
+    imageUrl:"http://souba.kksdapp.com/files/image?name=",
     request: {
         "SUCCESS": "200",
         "TOKEN_INVALID":"405"
