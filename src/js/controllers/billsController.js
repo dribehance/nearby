@@ -1,5 +1,5 @@
 // by dribehance <dribehance.kksdapp.com>
-var billsController = function($scope, $routeParams,SharedState, billServices, errorServices, toastServices, localStorageService, config) {
+var billsController = function($scope, $routeParams, SharedState, billServices, errorServices, toastServices, localStorageService, config) {
     $scope.token = $routeParams.token;
     $scope.bills = [];
     $scope.page = {
@@ -39,7 +39,7 @@ var billsController = function($scope, $routeParams,SharedState, billServices, e
         "3": "红包",
         "4": "推广收入",
         "5": "流量支出",
-        "6": "其他(升级VIP)"
+        "6": "其他(升级VIP,发布扣费,置顶扣费)"
 
     }
     $scope.getType = function(type) {

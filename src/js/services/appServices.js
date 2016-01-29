@@ -1,6 +1,6 @@
  // by dribehance <dribehance.kksdapp.com>
  // EventHandle
- angular.module("Nearby").factory("appServices", function($rootScope, $window, $location, errorServices, toastServices, platformServices,config) {
+ angular.module("Nearby").factory("appServices", function($rootScope, $window, $location, errorServices, toastServices, platformServices, config) {
      var routeChangeStart = function(e) {
          // do something white routechangestart,eg:
          // toastServices.show();
@@ -23,7 +23,9 @@
          } else {
              $rootScope.navbar.bottom = false;
          }
-         var _navbars_t = ["/bonus", "/bonus/envelope", "/bonus/received", "/bonus/paid", "/income", "/ping"];
+         var _navbars_t = ["/bonus", "/bonus/envelope", "/bonus/received", "/bonus/paid", "/fudai/received", "/fudai/willing",
+             "/income", "/ping"
+         ];
          if (_navbars_t.contains($location.path())) {
              $rootScope.navbar.top = false;
          } else {

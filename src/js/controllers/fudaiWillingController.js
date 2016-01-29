@@ -1,7 +1,7 @@
 // by dribehance <dribehance.kksdapp.com>
-var bonusPaidController = function($scope, $routeParams, $location, bonusServices, errorServices, toastServices, localStorageService, config) {
+var fudaiWillingController = function($scope, $routeParams, $location, bonusServices, errorServices, toastServices, localStorageService, config) {
     $scope.token = $routeParams.token;
-    $scope.bonus_paid = [];
+    $scope.fudai_willing = [];
     $scope.page = {
         token: $scope.token,
         pageNumber: 1,
@@ -14,14 +14,14 @@ var bonusPaidController = function($scope, $routeParams, $location, bonusService
         }
         toastServices.show();
         $scope.page.message = "正在加载...";
-        bonusServices.queryPaidBonus($scope.page).then(function(data) {
+        bonusServices.queryWillingFudai($scope.page).then(function(data) {
             toastServices.hide();
             $scope.page.message = "点击加载更多";
             if (data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
                 $scope.total_bonus_amount = data.userBonusCount;
                 $scope.total_bonus_money = data.userBonusTotalMoney;
-                $scope.bonus_paid = $scope.bonus_paid.concat(data.result.list);
-                $scope.no_more = $scope.bonus_paid.length == data.result.totalRow ? true : false;
+                $scope.fudai_willing = $scope.fudai_willing.concat(data.result.list);
+                $scope.no_more = $scope.fudai_willing.length == data.result.totalRow ? true : false;
             } else {
                 errorServices.autoHide("服务器错误");
             }
@@ -34,7 +34,7 @@ var bonusPaidController = function($scope, $routeParams, $location, bonusService
     }
     $scope.loadMore();
     $scope.queryReceivedBonus = function() {
-        $location.path("/bonus/received").search({
+        $location.path("/fudai/received").search({
             token: $routeParams.token
         }).replace();
     }

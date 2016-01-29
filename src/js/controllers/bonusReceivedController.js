@@ -19,7 +19,7 @@ var bonusReceivedController = function($scope, $location, $routeParams, bonusSer
             $scope.page.message = "点击加载更多";
             if (data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
                 $scope.total_bonus_amount = data.userBonusCount;
-                $scope.total_bonus_money = data.userBonusTotalMoney.money;
+                $scope.total_bonus_money = data.userBonusTotalMoney;
                 $scope.bonus_received = $scope.bonus_received.concat(data.result.list);
                 $scope.no_more = $scope.bonus_received.length == data.result.totalRow ? true : false;
             } else {

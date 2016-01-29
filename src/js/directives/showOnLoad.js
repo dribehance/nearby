@@ -7,7 +7,7 @@ angular.module("Nearby").directive('showOnLoaded', function() {
             });
             element.bind('load', function() {
                 console.log("loaded")
-                var rate = parseFloat(scope.$eval($(element).parent().attr("data-rate"))) || $(element).parent().width() / $(element).height();
+                var rate = parseFloat(scope.$eval($(element).parent().attr("data-rate"))) || $(element).parent().width() / $(element).parent().height();
                 if (!rate) {
                     console.log("unexpect rate")
                     return;

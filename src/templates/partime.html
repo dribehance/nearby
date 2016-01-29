@@ -21,7 +21,9 @@
                     <div style="margin-bottom:5px;">
                         <i class="kk-icon kk-16 kk-location"></i><span>{{result.job.area}}</span>
                         <i class="kk-icon kk-16 kk-time"></i><span>{{result.job.post_time}}</span>
-                        <span>{{result.job.price|currency:"￥"}}</span>
+                        <span class="text-primary">{{result.job.money|currency:"￥"}}</span>
+                        <span class="text-primary" ng-if="result.job.money_type == 1">/日</span>
+                        <span class="text-primary" ng-if="result.job.money_type == 0">/时</span>
                     </div>
                 </div>
             </div>

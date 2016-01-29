@@ -71,7 +71,7 @@
             </div>
             <!-- banner -->
             <previewer data-options="{autoPlay:10000}" class="previewer" data-rate="750/950">
-                <div class="image-holder full-width full-height" ng-repeat="b in result.images" on-repeat-done>
+                <div class="image-holder full-width full-height text-center" ng-repeat="b in result.images" on-repeat-done>
                     <img ng-src="{{staticImageUrl + b.image}}" err-src="../images/default.jpg" show-on-loaded alt="">
                 </div>
             </previewer>

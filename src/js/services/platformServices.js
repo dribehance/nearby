@@ -81,7 +81,7 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
                 });
             }
         },
-        save:function(input){
+        save: function(input) {
             if (!this.isNative()) {
                 return;
             }
@@ -97,7 +97,7 @@ angular.module("Nearby").factory("platformServices", function($rootScope, $windo
                 });
             }
         },
-        unsave:function(input){
+        unsave: function(input) {
             if (!this.isNative()) {
                 return;
             }

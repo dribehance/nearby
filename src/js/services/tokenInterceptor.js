@@ -1,5 +1,5 @@
 // by dribehance <dribehance.kksdapp.com>
-angular.module("Nearby").factory("tokenInterceptor", function($location, $q, localStorageService, errorServices, config) {
+angular.module("Nearby").factory("tokenInterceptor", function($location, $q, platformServices, localStorageService, errorServices, config) {
     return {
         // optional method
         'request': function(config) {
@@ -28,7 +28,8 @@ angular.module("Nearby").factory("tokenInterceptor", function($location, $q, loc
                 console.log("TOKEN_INVALID")
                 localStorageService.remove("token");
                 errorServices.autoHide("405")
-                // $location.path("/index").replace();
+                    // $location.path("/index").replace();
+                platformServices.notify()
                 return defer.promise;
             } else {
                 return response;
@@ -38,7 +39,7 @@ angular.module("Nearby").factory("tokenInterceptor", function($location, $q, loc
         // optional method
         'responseError': function(rejection) {
             var defer = $q.defer();
-            errorServices.requestError(rejection.data,rejection.status,rejection.headers,rejection.config);
+            errorServices.requestError(rejection.data, rejection.status, rejection.headers, rejection.config);
             return defer.promise;
         }
     }

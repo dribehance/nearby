@@ -24,7 +24,7 @@ var pingController = function($scope, $routeParams, platformServices, pingServic
                 $scope.result.driver.is_collect = 1;
                 errorServices.autoHide(data.message);
                 platformServices.save({
-                    id:$routeParams.driver_publish_id
+                    id: $routeParams.driver_publish_id
                 })
             } else {
                 errorServices.autoHide("服务器错误");
@@ -42,7 +42,7 @@ var pingController = function($scope, $routeParams, platformServices, pingServic
                 $scope.result.driver.is_collect = 0;
                 errorServices.autoHide(data.message)
                 platformServices.unsave({
-                    id:$routeParams.driver_publish_id
+                    id: $routeParams.driver_publish_id
                 })
             } else {
                 errorServices.autoHide("服务器错误");
